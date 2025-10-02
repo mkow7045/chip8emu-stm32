@@ -1,0 +1,5 @@
+../Core/Src/matrix_keypad.c:10:6:Keypad_init	32	static
+../Core/Src/matrix_keypad.c:29:6:Keypad_scan	32	static
+../Core/Src/matrix_keypad.c:77:6:Keypad_keyIsPressed	16	static
+../Core/Src/matrix_keypad.c:82:6:Keypad_keyIsRising	16	static
+../Core/Src/matrix_keypad.c:87:6:Keypad_keyIsFalling	16	static
