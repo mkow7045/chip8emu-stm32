@@ -1,10 +1,10 @@
 # CHIP-8 Emulator on STM32  
-*A minimal CHIP-8 interpreter and runtime environment, ported to the STM32 F446RE microcontroller.*  
+*A CHIP-8 emulator, ported to the STM32 F446RE microcontroller.*  
 
 [Watch the showcase video](https://youtu.be/00CG12AI1-k)
 
 ## Overview  
-This project implements an interpretter for the CHIP‑8 language. The CHIP-8 was designed in the 1970s and uses simple graphics (64×32 pixels) and keypad input.  
+This project implements an emulator for the CHIP‑8 language. The CHIP-8 was designed in the 1970s and uses simple graphics (64×32 pixels) and keypad input.  
 In this version, the emulator is deployed on the STM32F446RE microcontroller (Cortex-M4), using STM32 HAL.
 
 ## Hardware & Software Requirements  
@@ -21,7 +21,7 @@ In this version, the emulator is deployed on the STM32F446RE microcontroller (Co
 ## Emulation Details & Notes  
 - The interpreter fetches a 16-bit opcode every cycle from memory starting at 0x200.  
 - The `delay_timer` and `sound_timer` decrement at 60 Hz
-- Graphics buffer: 64×32 monochrome, each pixel is either on/off. On STM32 target this uses a simple buffer and sends to display via I2C.  
+- Graphics buffer: 64×32 monochrome, each pixel is either on/off. On STM32 target this uses a simple buffer and sends it to display via I2C.  
 - 16 button keypad for input
 - Memory layout follows standard: interpreter region, display buffer, stack, heap.
 - Sound via active buzzer.
