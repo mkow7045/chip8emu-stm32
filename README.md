@@ -8,7 +8,7 @@ This project implements an emulator for the CHIP‑8 language. The CHIP-8 was de
 In this version, the emulator is deployed on the STM32F446RE microcontroller (Cortex-M4), using STM32 HAL.
 
 ## Hardware & Software Requirements  
-- **MCU**: STM32F446RE board (e.g., Nucleo-F446RE)
+- **MCU**: STM32F446RE
 - **Build**: STM32CubeIDE  
 - **Flash**: Use ST-Link or other supported programmer to upload to MCU  
 
@@ -21,13 +21,13 @@ In this version, the emulator is deployed on the STM32F446RE microcontroller (Co
 ## Emulation Details & Notes  
 - The interpreter fetches a 16-bit opcode every cycle from memory starting at 0x200.  
 - The `delay_timer` and `sound_timer` decrement at 60 Hz
-- Graphics buffer: 64×32 monochrome, each pixel is either on/off. On STM32 target this uses a simple buffer and sends it to display via I2C.  
+- Graphics buffer: 64×32 monochrome, each pixel is either on/off. On STM32 this uses a simple buffer and sends it to display via I2C.  
 - 16 button keypad for input
 - Sound via active buzzer.
 - Known limitations: does not yet implement game switching, won't work with programs starting at 0x600.
 
 ## Why I built this  
-As part of my embedded systems and firmware work I wanted to deepen my understanding of how interpreted virtual machines map onto constrained hardware. By building the CHIP-8 emulator first on desktop and then porting it to a microcontroller, I sharpened my skills in: pointer and memory management, hardware timers, low-level C++ logic, and cross‐platform toolchains.  
+As part of my embedded systems and firmware work I wanted to deepen my understanding of how interpreted virtual machines map onto constrained hardware. By building the CHIP-8 emulator first on desktop and then porting it to a microcontroller, I sharpened my skills in: hardware timers, low-level C++ logic, and cross‐platform toolchains.  
 
 ## Future Work  
 - Add support for SCHIP (Super-CHIP) extensions (128×64 display, additional opcodes)  
