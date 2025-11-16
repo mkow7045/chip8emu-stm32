@@ -23,7 +23,7 @@ In this version, the emulator is deployed on the STM32F446RE microcontroller (Co
 - The `delay_timer` and `sound_timer` decrement at 60 Hz
 - Graphics buffer: 64×32 monochrome, each pixel is either on/off. On STM32 target this uses a simple buffer and sends it to display via I2C.  
 - 16 button keypad for input
-- Memory layout follows standard: interpreter region, display buffer, stack, heap.
+- Memory layout follows standard: interpreter region, display buffer, stack
 - Sound via active buzzer.
 - Known limitations: does not yet implement game switching.
 
