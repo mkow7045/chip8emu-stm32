@@ -23,9 +23,8 @@ In this version, the emulator is deployed on the STM32F446RE microcontroller (Co
 - The `delay_timer` and `sound_timer` decrement at 60 Hz
 - Graphics buffer: 64×32 monochrome, each pixel is either on/off. On STM32 target this uses a simple buffer and sends it to display via I2C.  
 - 16 button keypad for input
-- Memory layout follows standard: interpreter region, display buffer, stack
 - Sound via active buzzer.
-- Known limitations: does not yet implement game switching.
+- Known limitations: does not yet implement game switching, won't work with programs starting at 0x600.
 
 ## Why I built this  
 As part of my embedded systems and firmware work I wanted to deepen my understanding of how interpreted virtual machines map onto constrained hardware. By building the CHIP-8 emulator first on desktop and then porting it to a microcontroller, I sharpened my skills in: pointer and memory management, hardware timers, low-level C++ logic, and cross‐platform toolchains.  
