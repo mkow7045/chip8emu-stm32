@@ -21,7 +21,7 @@ public:
 
     void executeCycles(int cycles);
 
-    uint8_t randomNumber();
+    void randomizeNumber();
 
     void decreaseDT();
 
@@ -44,6 +44,7 @@ private:
     uint16_t m_I{};
     uint8_t m_DT{};
     uint8_t m_ST{};
+    uint8_t m_rngState{1};
     std::array<bool, 16> m_Keyboard{};
 };
 

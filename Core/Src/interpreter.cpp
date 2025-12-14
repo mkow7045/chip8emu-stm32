@@ -17,6 +17,11 @@ Interpreter::Interpreter()
 
 void Interpreter::loadGame(const uint8_t *game,const uint32_t size)
 {
+	for (int i{ 0 }; i < 80; ++i)
+	{
+		m_Mem[0x50 + i] = chip8_fontset[i];
+	}
+
     memcpy(&m_Mem[0x200], game, size);
 }
 
@@ -34,9 +39,9 @@ void Interpreter::dumpMem()
     }
 }
 
-uint8_t Interpreter::randomNumber()
+void Interpreter::randomizeNumber()
 {
-
+	m_rngState = m_rngState * 42 + 12314;
 }
 
 void Interpreter::decreaseDT()
@@ -233,7 +238,8 @@ void Interpreter::executeCycles(int cycles)
             break;
 
         case 0xC:
-            temp8 = randomNumber();
+        	randomizeNumber();
+            temp8 = m_rngState;
             temp8 &= opcode.nn();
             m_V[opcode.x()] = temp8;
             break;
